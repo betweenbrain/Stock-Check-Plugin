@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<extension version="3.2"
+           type="plugin"
+           group="system"
+           method="upgrade">
+	<name>plg_system_stockcheck</name>
+	<creationDate>July 17, 2014</creationDate>
+	<author>Matt Thomas</author>
+	<authorEmail>matt@betweenbrain.com</authorEmail>
+	<authorUrl>www.betweenbrain.com</authorUrl>
+	<copyright>(C) 2014 betweenbrain llc. All rights reserved.</copyright>
+	<version>1.0</version>
+	<description>PLG_SYSTEM_STOCKCHECK_DESC</description>
+
+	<files>
+		<filename plugin="stockcheck">stockcheck.php</filename>
+		<folder>language</folder>
+	</files>
+
+	<media folder="media" destination="images">
+		<filename>Check_Distributor_Stock.jpg</filename>
+	</media>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="mfg"
+				       type="text"
+				       default=""
+				       size="25"
+				       label="PLG_SYSTEM_STOCK_CHECK_MFG_LABEL"
+				       description="PLG_SYSTEM_STOCK_CHECK_MFG_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+
+</extension>
