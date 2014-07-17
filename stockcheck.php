@@ -37,13 +37,21 @@ class plgSystemStockcheck extends JPlugin
 	{
 		parent::__construct($subject, $config);
 
-		$this->app = JFactory::getApplication();
+		$this->app   = JFactory::getApplication();
+		$this->input = JFactory::getApplication()->input;
 	}
 
 	function onAfterRender()
 	{
 
+		// Prevent admin execution
 		if ($this->app->isAdmin())
+		{
+			return true;
+		}
+
+		// Prevent site execution when editing
+		if ($this->app->isSite() && $this->input->get('layout') == 'edit')
 		{
 			return true;
 		}
