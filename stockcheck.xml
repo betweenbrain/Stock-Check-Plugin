@@ -24,6 +24,18 @@
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
+				<field name="buttonText"
+				       type="text"
+				       default="Check Distributor Stock"
+				       size="25"
+				       label="PLG_SYSTEM_STOCK_CHECK_BUTTON_TEXT_LABEL"
+				       description="PLG_SYSTEM_STOCK_CHECK_BUTTON_TEXT_DESC" />
+				<field name="buttonClass"
+				       type="text"
+				       default=""
+				       size="25"
+				       label="PLG_SYSTEM_STOCK_CHECK_BUTTON_CLASS_LABEL"
+				       description="PLG_SYSTEM_STOCK_CHECK_BUTTON_CLASS_DESC" />
 				<field name="mfg"
 				       type="text"
 				       default=""

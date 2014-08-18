@@ -58,7 +58,9 @@ class plgSystemStockcheck extends JPlugin
 
 		$buffer = JResponse::getBody();
 
-		$mfg = $this->params->get('mfg', 'db9c3034-70df-472e-8a6f-eff4e63be1a4');
+		$mfg   = $this->params->get('mfg', 'db9c3034-70df-472e-8a6f-eff4e63be1a4');
+		$text  = htmlspecialchars($this->params->get('buttonText', 'Check Distributor Stock'));
+		$class = htmlspecialchars($this->params->get('buttonClass', 'stock-check'));
 
 		/**
 		 * Regex to  match shortcode
@@ -75,7 +77,7 @@ class plgSystemStockcheck extends JPlugin
 			foreach ($matches as $match)
 			{
 
-				$replacement = '<a title="Check Distributor Stock" href="http://service.stkcheck.com/Default.aspx?mfg=' . $mfg . '&amp;parts=' . $match[1] . '"><img src="' . JURI::base() . 'media/images/Check_Distributor_Stock.jpg" alt="Stock Check"> </a>';
+				$replacement = '<a class="' . $class . '" title="' . $text . '" href="http://service.stkcheck.com/Default.aspx?mfg=' . $mfg . '&amp;parts=' . $match[1] . '">' . $text . '</a>';
 
 				$buffer = str_replace($match[0], $replacement, $buffer);
 			}
